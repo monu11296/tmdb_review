@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core'
 
 import { apiCall } from '../utils/apiCall'
+import { SESSION_AUTH_URL, CALLBACK_URL } from '../constants' 
 
 import styles from '../styles/Login.module.css'
 import { ArrowBack, ExitToApp } from '@material-ui/icons'
@@ -55,7 +56,7 @@ const Login: React.FC<{}> = () => {
         apiCall('get', '/authentication/token/new').then((res: any) => {
             if (res.success === true) {
                 setLoading(true)
-                router.push(`https://www.themoviedb.org/authenticate/${res.request_token}?redirect_to=http://localhost:3000/login`)
+                router.push(`${SESSION_AUTH_URL+res.request_token}?redirect_to=${CALLBACK_URL}`)
             }
         }).catch(e => console.log(e))
     }
