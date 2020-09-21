@@ -183,7 +183,7 @@ const Details: React.FC<{}> = () => {
                                             <Grid container alignItems='center' justify='center'>
                                                 <Grid item xs={12} sm={12} className={styles.mt_10}>
                                                     <Grid container alignItems='center' justify='center'>
-                                                        <Grid item xs={12} sm={9}>
+                                                        <Grid item xs={12} sm={10}>
                                                             <Rating
                                                                 className={styles.rating}
                                                                 size="large"
@@ -197,7 +197,7 @@ const Details: React.FC<{}> = () => {
                                                             />
                                                         </Grid>
                                                         {rating ?
-                                                            <Grid item xs={3} sm={1}>
+                                                            <Grid item xs={3} sm={2}>
                                                                 <Typography
                                                                     style={{ fontWeight: 500 }}
                                                                     variant='h5' color='primary'
