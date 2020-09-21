@@ -1,0 +1,26 @@
+@media(max-width: 600px) {
+    .sectionDesktop {
+        display: none;
+    }
+    .sectionMobile {
+        display: flex;
+    }
+}
+
+@media(min-width: 600px) {
+    .sectionDesktop {
+        display: flex;
+    }
+    .sectionMobile {
+        display: none;
+    }
+}
+
+.root {
+    flex-grow: 1;
+}
+
+.home {
+    flex-grow: 1;
+    margin-right: 8px;
+}

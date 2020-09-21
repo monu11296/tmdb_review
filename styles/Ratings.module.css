@@ -1,0 +1,58 @@
+.ratings {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    background-color: #fafafa;
+}
+
+.container {
+    margin-top: 50px !important;
+}
+
+.mt_50 {
+    margin-top: 50px !important;
+} 
+
+.h5 {
+    font-weight: 500;
+}
+
+.mt_20 {
+    margin-top: 20px !important;
+}
+
+
+.card {
+    min-width: 275px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    min-height: 200px;
+}
+  
+  .media {
+    height: 170px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+
+.rating {
+    margin-top: 15px;
+}
+
+@media (min-width: 600px) {
+    .muiContainer {
+      min-width: 1200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+      min-width: 275px;
+    }
+  
+    .media {
+      height: 180px;
+    }
+}

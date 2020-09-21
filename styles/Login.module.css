@@ -1,0 +1,28 @@
+.login {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    background-color: #fafafa;
+}
+
+.container {
+    margin-top: 50px !important;
+}
+
+.mt_50 {
+    margin-top: 50px !important;
+} 
+
+.h5 {
+    font-weight: 500;
+}
+
+.mt_20 {
+    margin-top: 20px !important;
+}
+
+@media (min-width: 600px) {
+    .muiContainer {
+      min-width: 1200px;
+    }
+}
