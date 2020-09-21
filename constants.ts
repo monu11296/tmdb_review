@@ -4,4 +4,4 @@ export const AUTHORIZATION_BEARER = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZjl
 export const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500/'
 export const NO_IMAGE = 'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg'
 export const SESSION_AUTH_URL = 'https://www.themoviedb.org/authenticate/'
-export const CALLBACK_URL = 'https://tmdb-review.vercel.app'
+export const CALLBACK_URL = 'https://tmdb-review.vercel.app/login'
