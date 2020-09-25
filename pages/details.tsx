@@ -31,6 +31,7 @@ const Details: React.FC<{}> = () => {
     const [userData, setUserData] = useState<any>({})
     const [ratingSuccess, setRatingSuccess] = useState<boolean>(false)
     const [showSnack, setShowSnack] = useState<boolean>(false)
+    const [credits, setCredits] = useState<any>([])
 
     const router = useRouter()
     const { query } = router
@@ -62,6 +63,29 @@ const Details: React.FC<{}> = () => {
                 setLoading(false)
                 console.log(e)
             })
+
+            if (query.type === 'movie') {
+                apiCall('get', `/movie/${query.id}/credits`).then((res: any) => {
+                    if (Object.keys(res.cast).length > 0) {
+                        setCredits(res.cast)
+                        return
+                    }
+                    // apiCall('get', `/person/${res.cast[0].id}`).then((elm: any) => {
+                    //     console.log(elm)
+                    // })
+                })
+            }
+            if (query.type === 'tv') {
+                apiCall('get', `/tv/${query.id}/credits`).then((res: any) => {
+                    if (Object.keys(res.cast).length > 0) {
+                        setCredits(res.cast)
+                        return
+                    }
+                    // apiCall('get', `/person/${res.cast[0].id}`).then((elm: any) => {
+                    //     console.log(elm)
+                    // })
+                })
+            }
         }
 
         window.scroll({
@@ -170,8 +194,20 @@ const Details: React.FC<{}> = () => {
                                             : null
                                     }
                                 </Grid>
+                                {
+                                    Object.keys(credits).length > 0 ?
+                                        credits?.map((elm: any, i: number) => {
+                                            return (
+                                                <Grid item xs={12} sm={12}>
+                                                    <Typography key={i} onClick={() => router.push(`/actor?id=${elm.id}`)}>{elm?.name}</Typography>
+                                                </Grid>
+                                            )
+                                        })
+                                        : null
+                                }
 
                             </Grid>
+
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <Card className={styles.card}>
