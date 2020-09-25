@@ -61,7 +61,6 @@ const Details: React.FC<{}> = () => {
                 setLoading(false)
             }).catch(e => {
                 setLoading(false)
-                console.log(e)
             })
 
             if (query.type === 'movie') {
@@ -70,9 +69,6 @@ const Details: React.FC<{}> = () => {
                         setCredits(res.cast)
                         return
                     }
-                    // apiCall('get', `/person/${res.cast[0].id}`).then((elm: any) => {
-                    //     console.log(elm)
-                    // })
                 })
             }
             if (query.type === 'tv') {
@@ -81,9 +77,6 @@ const Details: React.FC<{}> = () => {
                         setCredits(res.cast)
                         return
                     }
-                    // apiCall('get', `/person/${res.cast[0].id}`).then((elm: any) => {
-                    //     console.log(elm)
-                    // })
                 })
             }
         }
