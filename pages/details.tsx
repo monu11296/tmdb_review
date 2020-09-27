@@ -187,13 +187,13 @@ const Details: React.FC<{}> = () => {
                                             : null
                                     }
                                 </Grid>
+                                {Object.keys(credits).length > 0 ? <Typography variant='h5' style={{margin: '10px'}}>Cast -</Typography> : null}
+                                <br />
                                 {
                                     Object.keys(credits).length > 0 ?
                                         credits?.map((elm: any, i: number) => {
                                             return (
-                                                <Grid item xs={12} sm={12}>
-                                                    <Typography key={i} onClick={() => router.push(`/actor?id=${elm.id}`)}>{elm?.name}</Typography>
-                                                </Grid>
+                                                    <Button key={i} onClick={() => router.push(`/actor?id=${elm.id}`)}>{elm?.name}</Button>
                                             )
                                         })
                                         : null

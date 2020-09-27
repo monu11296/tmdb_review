@@ -70,35 +70,36 @@ const Actor: React.FC<{}> = () => {
                         <img style={{ height: '200px' }} src={IMAGE_BASE_URL + userData?.profile_path} alt={userData?.name} />
                     </Grid>
                     <Grid item xs={12} sm={12}>
+                        <Typography variant='h5' style={{ marginTop: '10px', marginBottom: '20px' }}>Biography -</Typography>
                         <Typography variant='body1'>{userData?.biography}</Typography>
-                        <Typography variant='h6'>{userData?.birthday}</Typography>
+                        <Typography variant='h6' style={{ marginTop: '20px', marginBottom: '20px' }}>Date of birth - {userData?.birthday}</Typography>
                     </Grid>
                 </Grid>
 
                 <Grid container>
+                    <Grid item xs={12} sm={12}>
+                    <Typography variant='h6' style={{ margin: '10px', fontWeight: 400 }}>Other Works - </Typography>
+                    </Grid>
 
                     {
                         credits.length > 0 ?
                             credits.map((elm: any, i: number) => {
                                 return (
-                                    <Grid item xs={12} sm={12} key={i}>
-                                        <Typography onClick={() => {
-                                            router.push({
-                                                pathname: 'details',
-                                                query: {
-                                                    type: elm.title ? 'movie' : 'tv',
-                                                    id: elm.id
-                                                }
-                                            })
-                                        }}>{elm.title ? elm.title : elm.name}</Typography>
-                                    </Grid>
+                                    <Button onClick={() => {
+                                        router.push({
+                                            pathname: 'details',
+                                            query: {
+                                                type: elm.title ? 'movie' : 'tv',
+                                                id: elm.id
+                                            }
+                                        })
+                                    }}>{elm.title ? elm.title : elm.name}</Button>
                                 )
                             })
                             : null
-                }
+                    }
                 </Grid>
             </Container>
-
         </div>
     )
 
